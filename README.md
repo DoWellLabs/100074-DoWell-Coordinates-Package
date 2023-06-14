@@ -1,5 +1,6 @@
 # 100074-DoWell-Coordinates-Package
 Package for DoWell Coordinates
+
 To follow the steps you provided, please follow the instructions below:
 Create a branch from the main branch with the name of the project you are working on, followed by your name. For example, if the project is called "MyProject" and your name is John, the branch name would be "MyProject-John".
 
