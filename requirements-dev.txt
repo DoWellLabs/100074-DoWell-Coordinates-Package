@@ -1,0 +1,8 @@
+# Tools
+setuptools
+flake8
+pytest
+
+# Require library
+
+requests
