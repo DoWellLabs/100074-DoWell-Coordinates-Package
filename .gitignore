@@ -53,3 +53,6 @@ docs/_build/
 env/
 venv/
 ENV/
+
+_static
+_templates

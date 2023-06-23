@@ -1,12 +1,12 @@
 import requests
-from typing import Any, Dict
+from typing import Any, Union, Dict
 from .exceptions.exceptions import ApiError
 
 DOWELL_GEOMETRICAL_LAYOUT_URL = "http://100071.pythonanywhere.com/api/"
 
 
 class GeometricalLayoutApi(object):
-    """A client for the Dowell Ceometrical Layout of Big Data API.
+    """A client for the Dowell Geometrical Layout of Big Data API.
     'https://github.com/DoWellUXLab/DoWell-Geometrical-layout-of-Big-Data
     The API provides a set of endpoints to help users calculate the optimal
     arrangement of non-overlaping circles within a given canvas. By specifying
@@ -32,8 +32,18 @@ class GeometricalLayoutApi(object):
         self.requests = requests
         self.access_token = access_token
 
-    def post_object(self, radius: float, length: float, width: float) -> Dict:
-        """Parameters, 'radius, length, width' to the Api. You get back number of cycles and coordinate"""
+    def post_object(self, radius: Union[int, float], length: int, width: int) -> Dict:
+        """
+        Parameters, 'radius, length, width' to the Api. You get back number of cycles and coordinate
+
+        radius : int or float
+        length : int
+        width : int
+
+        Returns : Dictionary
+            Dictionary containing number of circles and coordinates
+        """
+        
         payload = {
             "radius": radius,
             "length": length,
