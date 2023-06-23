@@ -16,8 +16,8 @@ setup(
     description='This client library is designed to support the geometrical-layout'
                 'geometrical-layout help query endpoints of the "Dowell Geometrical Layout of Big Data API"',
     author='geometrical-layout',
-    maintainer='',
-    maintainer_email='',
+    maintainer='Abdullahi Abdulwasiu',
+    maintainer_email='abdullahiabdulwasiu1@gmail.com',
     url='https://github.com/DoWellUXLab/DoWell-Geometrical-layout-of-Big-Data',
     license='Apache',
     packages=["geometrical_layout"],
