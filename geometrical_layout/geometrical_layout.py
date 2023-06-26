@@ -54,12 +54,7 @@ class GeometricalLayoutApi(object):
                 DOWELL_GEOMETRICAL_LAYOUT_URL, json=payload)
             return response.json()
         except Exception as e:
-            raise ApiError(f"Improper parameter passed {e}")
+            raise ApiError(e)
 
     def __str__(self) -> str:
         return "Geometrical Layout"
-
-
-if __name__ == '__main__':
-    obj = GeometricalLayoutApi()
-    print(obj.post_object(2, 2, 2))
