@@ -2,12 +2,67 @@
 Dowell Geometrical Layout Python SDK Library
 ============================================
 
-This client is designed for the `GeometricalLayout Api here`_ Dowell Geometrical Layout of Big Data API.
+This client is designed for the Dowell Geometrical Layout of Big Data API `Geometrical Layout Api`_.
 By specifying the radius, length, and width, users can determine the number of circles
 that can be arranged in a triangular packaging, minimizing wastage of space.
 The coordinates of the circle can also be determine.
 
-.. _GeometricalLayout Api here: https://github.com/DoWellUXLab/DoWell-Geometrical-layout-of-Big-Data
+
+
+============
+Installation
+============
+
+This library currently supports Python 3.5+. The `requests`_ package is required.
+
+We recommend using `pip`_ and `virtualenv`_ for Installation. Please note
+that the Python package is called **geometrical-layout**.
+
+Installing a Released Version
+=============================
+
+.. code-block:: shell
+
+    virtualenv env
+    source env/bin/activate
+    pip install geometrical-layout
+
+**Example**
+
+.. code-block:: python
+
+    from geometrical_layout import GeometricalLayoutApi
+    req = GeometricalLayoutApi()
+
+
+Methods
+-------
+
+    post_object
+    -----------
+The endpoint receive a json object of radius, length, width.
+Resonse is ``dict`` containing number of circles and coordinates. 
+
+
+**Parameters**
+
+* ``radius`` - A ``float`` or an ``int`` that identifies a circle radius, is needed
+  to make API calls.
+ 
+* ``length`` - An ``int`` denoting the length of the space in canvas
+
+* ``width`` - A ``int`` denoting the length of the space in canvas.
+  is the last parameter needed to make API request.
+
+
+**Examples**
+
+.. code-block:: python
+
+    # Get the number of circles from the response.
+    numberOfcircle = req.post_object(radius, length, width)
+    print(numberOfcircle)
+
 
 
 Licensing
@@ -24,3 +79,8 @@ Support & Discussion
 For Support and Discussion, visit the official DoWellUXLab website.
 Documentation is available at https://geometrical-layouts.readthedocs.io/en/latest/index.html
 
+
+.. _Geometrical Layout Api: https://github.com/DoWellUXLab/DoWell-Geometrical-layout-of-Big-Data
+.. _requests: https://pypi.python.org/pypi/requests
+.. _pip: https://pip.pypa.io/
+.. _virtualenv: https://virtualenv.pypa.io/

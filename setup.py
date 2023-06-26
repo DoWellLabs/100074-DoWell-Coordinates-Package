@@ -1,28 +1,26 @@
 from setuptools import setup
+from geometrical_layout import version
 
 
 def get_version() -> str:
     """
     read version from VERSION file
     """
-    version = '0.1.0'
-    version = exec(open("geometrical_layout/version.py").read())
-    return version
+    return version.__version__
 
 
 setup(
     name='geometrical-layout',
-    version=get_version(),       
-    description='This client library is designed to support the geometrical-layout'
-                'geometrical-layout help query endpoints of the "Dowell Geometrical Layout of Big Data API"',
-    author='geometrical-layout',
+    version=get_version(),
+    description='This client library is designed to help query endpoints of the "Dowell Geometrical Layout of Big Data API"',
     maintainer='Abdullahi Abdulwasiu',
     maintainer_email='abdullahiabdulwasiu1@gmail.com',
     url='https://github.com/DoWellUXLab/DoWell-Geometrical-layout-of-Big-Data',
     license='Apache',
     packages=["geometrical_layout"],
-    package_dir={'': 'geometrical_layout'},
-    long_description=open("README.md").read(),
+    package_dir={
+        'geometrical_layout': 'geometrical_layout'},
+    long_description=open("README.rst").read(),
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
